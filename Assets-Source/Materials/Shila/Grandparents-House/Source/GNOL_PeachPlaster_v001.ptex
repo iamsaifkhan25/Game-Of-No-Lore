@@ -1,0 +1,239 @@
+{
+	"connections": [
+		{
+			"from": "tones",
+			"from_port": 0,
+			"to": "Material",
+			"to_port": 6
+		},
+		{
+			"from": "uniform_greyscale",
+			"from_port": 0,
+			"to": "Material",
+			"to_port": 2
+		},
+		{
+			"from": "fbm4",
+			"from_port": 0,
+			"to": "blend2",
+			"to_port": 0
+		},
+		{
+			"from": "colorize",
+			"from_port": 0,
+			"to": "Material",
+			"to_port": 0
+		},
+		{
+			"from": "blend2",
+			"from_port": 0,
+			"to": "tones",
+			"to_port": 0
+		},
+		{
+			"from": "fbm4_2",
+			"from_port": 0,
+			"to": "blend2",
+			"to_port": 1
+		},
+		{
+			"from": "tones",
+			"from_port": 0,
+			"to": "colorize",
+			"to_port": 0
+		}
+	],
+	"label": "Graph",
+	"longdesc": "",
+	"name": "_Node_782",
+	"node_position": {
+		"x": 0.0,
+		"y": 0.0
+	},
+	"nodes": [
+		{
+			"export_last_target": "Blender",
+			"export_paths": {
+				"Blender": "C:/Dev/Game-Of-No-Lore/Assets-Source/Materials/Shila/Exports/Red-Plaster/Red-Plaster"
+			},
+			"name": "Material",
+			"node_position": {
+				"x": 70.9279327392578,
+				"y": -402.876007080078
+			},
+			"parameters": {
+				"albedo_color": {
+					"a": 1.0,
+					"b": 0.99609375,
+					"g": 0.99609375,
+					"r": 0.99609375,
+					"type": "Color"
+				},
+				"ao": 0.0,
+				"depth_scale": 0.0,
+				"emission_energy": 0.0,
+				"flags_transparent": false,
+				"metallic": 0.0,
+				"normal": 0.0,
+				"roughness": 0.85,
+				"size": 11.0,
+				"sss": 0.0
+			},
+			"seed_int": 0,
+			"type": "material"
+		},
+		{
+			"name": "fbm4",
+			"node_position": {
+				"x": -610.464416503906,
+				"y": -578.937194824219
+			},
+			"parameters": {
+				"folds": 2.0,
+				"iterations": 5.0,
+				"lacunarity": 2.0,
+				"noise": 1.0,
+				"offset": 1.0,
+				"persistence": 0.5,
+				"scale_x": 4.0,
+				"scale_y": 4.0
+			},
+			"seed_int": 3304449792,
+			"type": "fbm4"
+		},
+		{
+			"name": "fbm4_2",
+			"node_position": {
+				"x": -617.764404296875,
+				"y": -259.137145996094
+			},
+			"parameters": {
+				"folds": 1.0,
+				"iterations": 2.5,
+				"lacunarity": 1.0,
+				"noise": 2.0,
+				"offset": 0.5,
+				"persistence": 0.25,
+				"scale_x": 8.0,
+				"scale_y": 8.0
+			},
+			"seed_int": 3304449792,
+			"type": "fbm4"
+		},
+		{
+			"generic_size": 1,
+			"name": "blend2",
+			"node_position": {
+				"x": -397.464416503906,
+				"y": -359.237152099609
+			},
+			"parameters": {
+				"amount1": 0.15,
+				"blend_type1": 0.0
+			},
+			"seed_int": 0,
+			"type": "blend2"
+		},
+		{
+			"name": "tones",
+			"node_position": {
+				"x": -183.264404296875,
+				"y": -202.137161254883
+			},
+			"parameters": {
+				"in_max": {
+					"a": 1.0,
+					"b": 0.573750138282776,
+					"g": 0.573750138282776,
+					"r": 0.573750138282776,
+					"type": "Color"
+				},
+				"in_mid": {
+					"a": 0.5,
+					"b": 0.235000103712082,
+					"g": 0.235000103712082,
+					"r": 0.235000103712082,
+					"type": "Color"
+				},
+				"in_min": {
+					"a": 0.0,
+					"b": 0.428125232458115,
+					"g": 0.428125232458115,
+					"r": 0.428125232458115,
+					"type": "Color"
+				},
+				"out_max": {
+					"a": 1.0,
+					"b": 0.484375,
+					"g": 0.484375,
+					"r": 0.484375,
+					"type": "Color"
+				},
+				"out_min": {
+					"a": 0.0,
+					"b": 0.23937514424324,
+					"g": 0.23937514424324,
+					"r": 0.23937514424324,
+					"type": "Color"
+				}
+			},
+			"seed_int": 0,
+			"type": "tones"
+		},
+		{
+			"name": "uniform_greyscale",
+			"node_position": {
+				"x": -254.698486328125,
+				"y": -481.474792480469
+			},
+			"parameters": {
+				"color": 0.8
+			},
+			"seed_int": 0,
+			"type": "uniform_greyscale"
+		},
+		{
+			"name": "colorize",
+			"node_position": {
+				"x": -138.416717529297,
+				"y": -365.372131347656
+			},
+			"parameters": {
+				"gradient": {
+					"interpolation": 1,
+					"points": [
+						{
+							"a": 1.0,
+							"b": 0.403921574354172,
+							"g": 0.474509805440903,
+							"pos": 0.0,
+							"r": 0.721568644046783
+						},
+						{
+							"a": 1.0,
+							"b": 0.517647087574005,
+							"g": 0.603921592235565,
+							"pos": 0.536748405631262,
+							"r": 0.82745099067688
+						},
+						{
+							"a": 1.0,
+							"b": 0.643137276172638,
+							"g": 0.721568644046783,
+							"pos": 1.0,
+							"r": 0.898039221763611
+						}
+					],
+					"type": "Gradient"
+				}
+			},
+			"seed_int": 0,
+			"type": "colorize"
+		}
+	],
+	"parameters": {},
+	"project_thumbnail": "UklGRg4FAABXRUJQVlA4WAoAAAAQAAAALwAALwAAQUxQSJQCAAANoCNteyJJevXrV9HAMpNX7Q9UrMd4gGEea5ksZmYGi3n3AG12ZIzVFT0X4BmrrOXdqqiUUlooyNIJImICmFOsBzh//bn89tcvAK6K1C9SVmbLdb1uM1Y0ZXysX6yVaIx1aRmvObyDqe3OZd3edRt/+PQkGmqR5K945gZIFWIwJFLELu3cv/LMWWPifFry8D0QxFomGoxAjK2Dj374ZtIwjxtd9BN4dcwrksL6lzZvGzg/mxtu+gavDeo0msLNn+xZdX4WN7z2PXyHuo36S5fvP+L8NB1teo/QZoEuNIv7VzVMkvKibwgtFqqhubxnIHFC4id8mwWrv/STbYn/q38Y32Hhzt+8+U0NIOUV96BkqLz04VmJSHwa38jB+PWPPCtRymtuQMlSObhyUmx1GN/Iw/jOvk+tNzuwZGrZ+UPJFlI2kpY2rnEdVTZU9rqCHln3+nSRfITusfObmHwMl43XR7LuyLkVJh9Du0n2vzXbyWSTzGj8l3TIeRh/GV+WTDbJDOBYN0o2UY5Bv0fOfSius/lYCljbuBQlk2iP/YErf9hZ2Uwq+z2u4tN9nWSySA3/FVXUkysHg2YR9HO0JPLsI+uTySA1xq8QIerZD18KmkHQx9ASCObNzTd7tzDfKY4az/9N2vbJpUEXFNo/34lJE6IO9iw3gy4ktKo70JLJwa3eXzS9W4BvV9fhRkz37sj9y5d6NTWl0Pn5DtyQWb1b3fPJzXg1NaTQ0OJO3JDZvQ62bX5pPUFkjhidjh87io6YN0h688NHD7ZIFWIwJFLEWgmfv4wxJfNH9OwzK/t3LlkmGozAse+/BPWJWoPIyU9/2Hhdr3tZp81oODjWL/4AjSV1xyi2XCv6x8bSZBz5v6tKZgdWUDggVAIAABAPAJ0BKjAAMAA+iTqUR6UjoiEuLmCgEQljALEfHLGENTt2rtr3m6vEPxaCA5MT/U8oPzz7AX8o/qPUp/aD2AP13HmaTk1lvI/1b/8D2zg1a6/tNVW83ppUy78wxjzHyGJuba3XHy8Og76E6/higU7chKvSly2D9YXYsCvHbEosAAD++90t7CifQqzLHZEUYthp/TXogDI+hsu07dhuYDpwUZvuFQuzhEEHc0I6VVLiYaUQD9fIvkqIu4nsILnszT2RNwiglCJDK8UH63aqfx1Lv1TPtf+aGz9IJkMvGY3WWDzV5yOJqKUzD5sRe+0wvfKOmJmFteTHGojnIG/FP6qer74Tc1CpTn2MI8ScoB3Sdk1QTUyfCV5+/2Y3HTQtAm1e815LQd5oLy9nFc831gKleDV2NTvlhgFe5tBAIQ7PTT//pHcimr/UG4UHa66LD84GNSMCttY8ABWZn/mBA/ev0xvZbyrS2dzbxMYvx1tb5/+Jj/+VT/BpTF6vdt3/GPcOyrtdU9AKWUw1IiwXetsz3X/9101Iaxa7iuFbQI1S7u+/jY0AWKeAIqtXa/pXspnIU51p0qD01QjbpHh2ZolzB4XaI5VjQurf9u1y6jlc704DuTYHjG0pQ51KCv5js5UrASJGPIrZ2CcLGeuCQ7fguQ5iHwKEIwxF0T1wTpaGfhGbI5SbX0yJBKJCFooyZ5+vtl9m7+F2qy7sdbze6l5p73ELygQJqteZkFC6VpyAaFWUEZEPbPlhlY3W+Ya2h4Gajyyy1OnBwQ3KE03zFv0+NwAA",
+	"seed_int": 0,
+	"shortdesc": "",
+	"type": "graph"
+}

@@ -1,0 +1,239 @@
+{
+	"connections": [
+		{
+			"from": "tones",
+			"from_port": 0,
+			"to": "Material",
+			"to_port": 6
+		},
+		{
+			"from": "uniform_greyscale",
+			"from_port": 0,
+			"to": "Material",
+			"to_port": 2
+		},
+		{
+			"from": "fbm4",
+			"from_port": 0,
+			"to": "blend2",
+			"to_port": 0
+		},
+		{
+			"from": "colorize",
+			"from_port": 0,
+			"to": "Material",
+			"to_port": 0
+		},
+		{
+			"from": "blend2",
+			"from_port": 0,
+			"to": "tones",
+			"to_port": 0
+		},
+		{
+			"from": "fbm4_2",
+			"from_port": 0,
+			"to": "blend2",
+			"to_port": 1
+		},
+		{
+			"from": "tones",
+			"from_port": 0,
+			"to": "colorize",
+			"to_port": 0
+		}
+	],
+	"label": "Graph",
+	"longdesc": "",
+	"name": "_Node_782",
+	"node_position": {
+		"x": 0.0,
+		"y": 0.0
+	},
+	"nodes": [
+		{
+			"export_last_target": "Blender",
+			"export_paths": {
+				"Blender": "C:/Dev/Game-Of-No-Lore/Assets-Source/Materials/Shila/Exports/Handpump-AlgaeGreen/Handpump_AlgaeGreen"
+			},
+			"name": "Material",
+			"node_position": {
+				"x": 70.9279327392578,
+				"y": -402.876007080078
+			},
+			"parameters": {
+				"albedo_color": {
+					"a": 1.0,
+					"b": 0.99609375,
+					"g": 0.99609375,
+					"r": 0.99609375,
+					"type": "Color"
+				},
+				"ao": 0.0,
+				"depth_scale": 0.0,
+				"emission_energy": 0.0,
+				"flags_transparent": false,
+				"metallic": 0.0,
+				"normal": 0.0,
+				"roughness": 0.95,
+				"size": 11.0,
+				"sss": 0.0
+			},
+			"seed_int": 0,
+			"type": "material"
+		},
+		{
+			"name": "fbm4",
+			"node_position": {
+				"x": -610.464416503906,
+				"y": -578.937194824219
+			},
+			"parameters": {
+				"folds": 2.0,
+				"iterations": 5.0,
+				"lacunarity": 2.0,
+				"noise": 1.0,
+				"offset": 1.0,
+				"persistence": 0.5,
+				"scale_x": 5.0,
+				"scale_y": 5.0
+			},
+			"seed_int": 3304449792,
+			"type": "fbm4"
+		},
+		{
+			"name": "fbm4_2",
+			"node_position": {
+				"x": -617.764404296875,
+				"y": -259.137145996094
+			},
+			"parameters": {
+				"folds": 1.0,
+				"iterations": 3.0,
+				"lacunarity": 1.5,
+				"noise": 2.0,
+				"offset": 0.5,
+				"persistence": 0.3,
+				"scale_x": 12.0,
+				"scale_y": 12.0
+			},
+			"seed_int": 3304449792,
+			"type": "fbm4"
+		},
+		{
+			"generic_size": 1,
+			"name": "blend2",
+			"node_position": {
+				"x": -397.464416503906,
+				"y": -359.237152099609
+			},
+			"parameters": {
+				"amount1": 0.18,
+				"blend_type1": 0.0
+			},
+			"seed_int": 0,
+			"type": "blend2"
+		},
+		{
+			"name": "tones",
+			"node_position": {
+				"x": -183.264404296875,
+				"y": -202.137161254883
+			},
+			"parameters": {
+				"in_max": {
+					"a": 1.0,
+					"b": 0.573750138282776,
+					"g": 0.573750138282776,
+					"r": 0.573750138282776,
+					"type": "Color"
+				},
+				"in_mid": {
+					"a": 0.5,
+					"b": 0.235000103712082,
+					"g": 0.235000103712082,
+					"r": 0.235000103712082,
+					"type": "Color"
+				},
+				"in_min": {
+					"a": 0.0,
+					"b": 0.428125232458115,
+					"g": 0.428125232458115,
+					"r": 0.428125232458115,
+					"type": "Color"
+				},
+				"out_max": {
+					"a": 1.0,
+					"b": 0.484375,
+					"g": 0.484375,
+					"r": 0.484375,
+					"type": "Color"
+				},
+				"out_min": {
+					"a": 0.0,
+					"b": 0.23937514424324,
+					"g": 0.23937514424324,
+					"r": 0.23937514424324,
+					"type": "Color"
+				}
+			},
+			"seed_int": 0,
+			"type": "tones"
+		},
+		{
+			"name": "uniform_greyscale",
+			"node_position": {
+				"x": -254.698486328125,
+				"y": -481.474792480469
+			},
+			"parameters": {
+				"color": 0.72
+			},
+			"seed_int": 0,
+			"type": "uniform_greyscale"
+		},
+		{
+			"name": "colorize",
+			"node_position": {
+				"x": -138.416717529297,
+				"y": -365.372131347656
+			},
+			"parameters": {
+				"gradient": {
+					"interpolation": 1,
+					"points": [
+						{
+							"a": 1.0,
+							"b": 0.24705882370472,
+							"g": 0.290196090936661,
+							"pos": 0.0,
+							"r": 0.184313729405403
+						},
+						{
+							"a": 1.0,
+							"b": 0.364705890417099,
+							"g": 0.423529416322708,
+							"pos": 0.536748405631262,
+							"r": 0.30588236451149
+						},
+						{
+							"a": 1.0,
+							"b": 0.513725519180298,
+							"g": 0.580392181873322,
+							"pos": 1.0,
+							"r": 0.47843137383461
+						}
+					],
+					"type": "Gradient"
+				}
+			},
+			"seed_int": 0,
+			"type": "colorize"
+		}
+	],
+	"parameters": {},
+	"project_thumbnail": "UklGRn4EAABXRUJQVlA4WAoAAAAQAAAALwAALwAAQUxQSJQCAAANoCNteyJJevXrV9HAMpNX7Q9UrMd4gGEea5ksZmYGi3n3AG12ZIzVFT0X4BmrrOXdqqiUUlooyNIJImICmFOsBzh//bn89tcvAK6K1C9SVmbLdb1uM1Y0ZXysX6yVaIx1aRmvObyDqe3OZd3edRt/+PQkGmqR5K945gZIFWIwJFLELu3cv/LMWWPifFry8D0QxFomGoxAjK2Dj374ZtIwjxtd9BN4dcwrksL6lzZvGzg/mxtu+gavDeo0msLNn+xZdX4WN7z2PXyHuo36S5fvP+L8NB1teo/QZoEuNIv7VzVMkvKibwgtFqqhubxnIHFC4id8mwWrv/STbYn/q38Y32Hhzt+8+U0NIOUV96BkqLz04VmJSHwa38jB+PWPPCtRymtuQMlSObhyUmx1GN/Iw/jOvk+tNzuwZGrZ+UPJFlI2kpY2rnEdVTZU9rqCHln3+nSRfITusfObmHwMl43XR7LuyLkVJh9Du0n2vzXbyWSTzGj8l3TIeRh/GV+WTDbJDOBYN0o2UY5Bv0fOfSius/lYCljbuBQlk2iP/YErf9hZ2Uwq+z2u4tN9nWSySA3/FVXUkysHg2YR9HO0JPLsI+uTySA1xq8QIerZD18KmkHQx9ASCObNzTd7tzDfKY4az/9N2vbJpUEXFNo/34lJE6IO9iw3gy4ktKo70JLJwa3eXzS9W4BvV9fhRkz37sj9y5d6NTWl0Pn5DtyQWb1b3fPJzXg1NaTQ0OJO3JDZvQ62bX5pPUFkjhidjh87io6YN0h688NHD7ZIFWIwJFLEWgmfv4wxJfNH9OwzK/t3LlkmGozAse+/BPWJWoPIyU9/2Hhdr3tZp81oODjWL/4AjSV1xyi2XCv6x8bSZBz5v6tKZgdWUDggxAEAAPAMAJ0BKjAAMAA+jTqWR6UjIiEuOA5goBGJZQC8tfgF3KyazLvF39Mb9D9dPYY/Zkq0UbUi3ZjTCcJOHpog/nrTwqWd9z3CN7C7sjz0XSXQ8DshJV0xVuB1pLK/JwqCJw1lt8PN8uHtC84vHad2imAA/v3a1DYwA2oRJLVEJ1/eAHqE6mE7Vq6owIgtb67TlTKPgJeLtH0oDLINX4OZknN358aTQoXVLlZ/GFh/8Dj3/b/gvRVFResxed5bo+FHWLHwfNVLX+4fUdeuHLVq/4w/iPk4CaT9Hgc/f4CdB7t5mNRcicv1ZJMsT3gfKhCYhk3EH2YJg/JvGWe15Nj1anoMPXwCWr1LhiBlrSDuZEcqHA9XpU34rIz6x4XKYrebN8/Xpv6tQSnLYdMUgeXrrInYNnDz/01/7/LsuSOwQD/PiINvm746qMyvcrXn4Lm45+Yf++u3gxXlN9VRZ2j1sFXodWrqPS2cmLHutLiwLA/rWz7/MZ4iieOGNEArIfv/HApNiFVIAZXubIPDUyQPyhuUeM1bhBLs7dvo5zmwRPYovANPdPHzWSDxA4OZpDZhBtCO/PE4rMYOt6+7mt5YzirwMoAA",
+	"seed_int": 0,
+	"shortdesc": "",
+	"type": "graph"
+}

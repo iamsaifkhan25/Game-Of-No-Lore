@@ -1,0 +1,239 @@
+{
+	"connections": [
+		{
+			"from": "tones",
+			"from_port": 0,
+			"to": "Material",
+			"to_port": 6
+		},
+		{
+			"from": "uniform_greyscale",
+			"from_port": 0,
+			"to": "Material",
+			"to_port": 2
+		},
+		{
+			"from": "fbm4",
+			"from_port": 0,
+			"to": "blend2",
+			"to_port": 0
+		},
+		{
+			"from": "colorize",
+			"from_port": 0,
+			"to": "Material",
+			"to_port": 0
+		},
+		{
+			"from": "blend2",
+			"from_port": 0,
+			"to": "tones",
+			"to_port": 0
+		},
+		{
+			"from": "fbm4_2",
+			"from_port": 0,
+			"to": "fbm4",
+			"to_port": 0
+		},
+		{
+			"from": "colorize",
+			"from_port": 0,
+			"to": "blend2",
+			"to_port": 1
+		}
+	],
+	"label": "Graph",
+	"longdesc": "",
+	"name": "_Node_782",
+	"node_position": {
+		"x": 0.0,
+		"y": 0.0
+	},
+	"nodes": [
+		{
+			"export_last_target": "Blender",
+			"export_paths": {
+				"Blender": "C:/Dev/Game-Of-No-Lore/Assets-Source/Materials/Micro-Tests/MicroTestA/Exports/Warm-Plaster/Warm-Plaster"
+			},
+			"name": "Material",
+			"node_position": {
+				"x": 228.227935791016,
+				"y": -365.476013183594
+			},
+			"parameters": {
+				"albedo_color": {
+					"a": 1.0,
+					"b": 0.99609375,
+					"g": 0.99609375,
+					"r": 0.99609375,
+					"type": "Color"
+				},
+				"ao": 0.0,
+				"depth_scale": 0.0,
+				"emission_energy": 0.0,
+				"flags_transparent": false,
+				"metallic": 0.0,
+				"normal": 0.0,
+				"roughness": 0.85,
+				"size": 11.0,
+				"sss": 0.0
+			},
+			"seed_int": 0,
+			"type": "material"
+		},
+		{
+			"name": "fbm4",
+			"node_position": {
+				"x": -580.764404296875,
+				"y": -517.337158203125
+			},
+			"parameters": {
+				"folds": 2.0,
+				"iterations": 5.0,
+				"lacunarity": 2.0,
+				"noise": 1,
+				"offset": 1.0,
+				"persistence": 0.5,
+				"scale_x": 4.0,
+				"scale_y": 4.0
+			},
+			"seed_int": 3304449792,
+			"type": "fbm4"
+		},
+		{
+			"name": "fbm4_2",
+			"node_position": {
+				"x": -595.764404296875,
+				"y": -233.837158203125
+			},
+			"parameters": {
+				"folds": 1.0,
+				"iterations": 2.5,
+				"lacunarity": 1.0,
+				"noise": 2,
+				"offset": 0.5,
+				"persistence": 0.25,
+				"scale_x": 8.0,
+				"scale_y": 8.0
+			},
+			"seed_int": 3304449792,
+			"type": "fbm4"
+		},
+		{
+			"generic_size": 1,
+			"name": "blend2",
+			"node_position": {
+				"x": -312.764404296875,
+				"y": -272.337158203125
+			},
+			"parameters": {
+				"amount1": 0.2,
+				"blend_type1": 0.0
+			},
+			"seed_int": 0,
+			"type": "blend2"
+		},
+		{
+			"name": "tones",
+			"node_position": {
+				"x": -56.764404296875,
+				"y": -281.337158203125
+			},
+			"parameters": {
+				"in_max": {
+					"a": 1.0,
+					"b": 1.0,
+					"g": 1.0,
+					"r": 1.0,
+					"type": "Color"
+				},
+				"in_mid": {
+					"a": 0.5,
+					"b": 0.606249988079071,
+					"g": 0.606249988079071,
+					"r": 0.606249988079071,
+					"type": "Color"
+				},
+				"in_min": {
+					"a": 0.0,
+					"b": 0.600000023841858,
+					"g": 0.600000023841858,
+					"r": 0.600000023841858,
+					"type": "Color"
+				},
+				"out_max": {
+					"a": 1.0,
+					"b": 1.0,
+					"g": 1.0,
+					"r": 1.0,
+					"type": "Color"
+				},
+				"out_min": {
+					"a": 0.0,
+					"b": 0.493750005960464,
+					"g": 0.493750005960464,
+					"r": 0.493750005960464,
+					"type": "Color"
+				}
+			},
+			"seed_int": 0,
+			"type": "tones"
+		},
+		{
+			"name": "uniform_greyscale",
+			"node_position": {
+				"x": -298.698486328125,
+				"y": -397.874816894531
+			},
+			"parameters": {
+				"color": 0.8
+			},
+			"seed_int": 0,
+			"type": "uniform_greyscale"
+		},
+		{
+			"name": "colorize",
+			"node_position": {
+				"x": -282.516723632813,
+				"y": -550.172119140625
+			},
+			"parameters": {
+				"gradient": {
+					"interpolation": 1,
+					"points": [
+						{
+							"a": 1.0,
+							"b": 0.556862771511078,
+							"g": 0.643137276172638,
+							"pos": 0.000954198473282443,
+							"r": 0.717647075653076
+						},
+						{
+							"a": 1.0,
+							"b": 0.658823549747467,
+							"g": 0.749019622802734,
+							"pos": 0.571564885496183,
+							"r": 0.803921580314636
+						},
+						{
+							"a": 1.0,
+							"b": 0.796078443527222,
+							"g": 0.862745106220245,
+							"pos": 1.0,
+							"r": 0.898039221763611
+						}
+					],
+					"type": "Gradient"
+				}
+			},
+			"seed_int": 0,
+			"type": "colorize"
+		}
+	],
+	"parameters": {},
+	"project_thumbnail": "UklGRgwFAABXRUJQVlA4WAoAAAAQAAAALwAALwAAQUxQSJQCAAANoCNteyJJevXrV9HAMpNX7Q9UrMd4gGEea5ksZmYGi3n3AG12ZIzVFT0X4BmrrOXdqqiUUlooyNIJImICmFOsBzh//bn89tcvAK6K1C9SVmbLdb1uM1Y0ZXysX6yVaIx1aRmvObyDqe3OZd3edRt/+PQkGmqR5K945gZIFWIwJFLELu3cv/LMWWPifFry8D0QxFomGoxAjK2Dj374ZtIwjxtd9BN4dcwrksL6lzZvGzg/mxtu+gavDeo0msLNn+xZdX4WN7z2PXyHuo36S5fvP+L8NB1teo/QZoEuNIv7VzVMkvKibwgtFqqhubxnIHFC4id8mwWrv/STbYn/q38Y32Hhzt+8+U0NIOUV96BkqLz04VmJSHwa38jB+PWPPCtRymtuQMlSObhyUmx1GN/Iw/jOvk+tNzuwZGrZ+UPJFlI2kpY2rnEdVTZU9rqCHln3+nSRfITusfObmHwMl43XR7LuyLkVJh9Du0n2vzXbyWSTzGj8l3TIeRh/GV+WTDbJDOBYN0o2UY5Bv0fOfSius/lYCljbuBQlk2iP/YErf9hZ2Uwq+z2u4tN9nWSySA3/FVXUkysHg2YR9HO0JPLsI+uTySA1xq8QIerZD18KmkHQx9ASCObNzTd7tzDfKY4az/9N2vbJpUEXFNo/34lJE6IO9iw3gy4ktKo70JLJwa3eXzS9W4BvV9fhRkz37sj9y5d6NTWl0Pn5DtyQWb1b3fPJzXg1NaTQ0OJO3JDZvQ62bX5pPUFkjhidjh87io6YN0h688NHD7ZIFWIwJFLEWgmfv4wxJfNH9OwzK/t3LlkmGozAse+/BPWJWoPIyU9/2Hhdr3tZp81oODjWL/4AjSV1xyi2XCv6x8bSZBz5v6tKZgdWUDggUgIAAHAOAJ0BKjAAMAA+kT6YSaWjIiEqtVwAsBIJZwC+QCw41iCniN0rkxL/h+XH6L/5XuDfx/+i/63rV/rv7AH6tDpmk5NZYZOzOsmgiJqLfqaCcpfdz+0+98wt2eHQSSXpvtwGY3JT5p1Z39Vr73y/ynF0BA1RTHYZbl+y9AAA/vypCyqqCBLwrVc24hLku8Z3uv2V4jYAu0lR2Gg0S896Z4/deOveNTdyj+4AuvUSSU3UqQiGxm8NDoGb2W1k6gZxV5oCu+2fnPIO+S787D/P/zHE0aQRQA0rehy8ZFaghI7cnLH/uEXe/BcZGnKWB/YOg1Aw8H20alzvx5A+UmY5JsDcW23YwddCwH3/S3gQu/SFVz5FNWFmTQRmhCN9wRyNX8nfgpQbUfcXO34MwL99sN06/k+n/KiM5CIeNfK//0RwhouclOANaab2l1GzH45ogj1NBSyGLUaCxwbQA7qz7znjwapNZoADOcmFnzJGvOo/+O3/+YZ94y1VBHU9n1B8Y4OjOICUgE/6dGQI1mEAlsNuSy0ZnKfSPvn/3+kplXhPQfQfxIa0NRQLV4PQp4iVIW5dR5dVf8tFznvXCebTuTjPxOjiGD2+QCid7YYIJUkmWTelca+5Nvd3E4Wqlak7LbeiufIcidPEvnyX9Bgx1sb/hZ8XfzSPTZ0EguLPGtYyzdoB7dCeiOBI8zKYynF0FaV8HUJb4FGC7YD2WTbaAPH0npVjTDkSejoAu3BQNStiswagtXmcMMtuUZRkYsUm85HtHC4l2KqvUhQHhC+P9cugAA==",
+	"seed_int": 0,
+	"shortdesc": "",
+	"type": "graph"
+}

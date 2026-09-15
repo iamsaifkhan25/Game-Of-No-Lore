@@ -1,0 +1,299 @@
+{
+	"connections": [
+		{
+			"from": "uniform_greyscale",
+			"from_port": 0,
+			"to": "Material",
+			"to_port": 2
+		},
+		{
+			"from": "colorize",
+			"from_port": 0,
+			"to": "Material",
+			"to_port": 0
+		},
+		{
+			"from": "blend2",
+			"from_port": 0,
+			"to": "tones",
+			"to_port": 0
+		},
+		{
+			"from": "tones",
+			"from_port": 0,
+			"to": "colorize",
+			"to_port": 0
+		},
+		{
+			"from": "bricks",
+			"from_port": 0,
+			"to": "blend2",
+			"to_port": 0
+		},
+		{
+			"from": "bricks",
+			"from_port": 0,
+			"to": "tones_2",
+			"to_port": 0
+		},
+		{
+			"from": "tones_2",
+			"from_port": 0,
+			"to": "Material",
+			"to_port": 6
+		},
+		{
+			"from": "fbm4",
+			"from_port": 0,
+			"to": "blend2",
+			"to_port": 1
+		}
+	],
+	"label": "Graph",
+	"longdesc": "",
+	"name": "_Node_782",
+	"node_position": {
+		"x": 0.0,
+		"y": 0.0
+	},
+	"nodes": [
+		{
+			"export_last_target": "Blender",
+			"export_paths": {
+				"Blender": "C:/Dev/Game-Of-No-Lore/Assets-Source/Materials/Shila/Exports/Exposed-Brick/Exposed-Brick"
+			},
+			"name": "Material",
+			"node_position": {
+				"x": -18.0720672607422,
+				"y": -535.8759765625
+			},
+			"parameters": {
+				"albedo_color": {
+					"a": 1.0,
+					"b": 0.99609375,
+					"g": 0.99609375,
+					"r": 0.99609375,
+					"type": "Color"
+				},
+				"ao": 0.0,
+				"depth_scale": 0.0,
+				"emission_energy": 0.0,
+				"flags_transparent": false,
+				"metallic": 0.0,
+				"normal": 0.0,
+				"roughness": 0.95,
+				"size": 11.0,
+				"sss": 0.0
+			},
+			"seed_int": 0,
+			"type": "material"
+		},
+		{
+			"name": "fbm4",
+			"node_position": {
+				"x": -656.564453125,
+				"y": -310.537170410156
+			},
+			"parameters": {
+				"folds": 2.0,
+				"iterations": 5.0,
+				"lacunarity": 2.0,
+				"noise": 2,
+				"offset": 0.0,
+				"persistence": 0.5,
+				"scale_x": 6.0,
+				"scale_y": 6.0
+			},
+			"seed_int": 3304449792,
+			"type": "fbm4"
+		},
+		{
+			"generic_size": 1,
+			"name": "blend2",
+			"node_position": {
+				"x": -417.464416503906,
+				"y": -395.937164306641
+			},
+			"parameters": {
+				"amount1": 0.3,
+				"blend_type1": 2.0
+			},
+			"seed_int": 0,
+			"type": "blend2"
+		},
+		{
+			"name": "tones",
+			"node_position": {
+				"x": -409.264404296875,
+				"y": -202.137145996094
+			},
+			"parameters": {
+				"in_max": {
+					"a": 1.0,
+					"b": 0.723750114440918,
+					"g": 0.723750114440918,
+					"r": 0.723750114440918,
+					"type": "Color"
+				},
+				"in_mid": {
+					"a": 0.5,
+					"b": 0.485000133514404,
+					"g": 0.485000133514404,
+					"r": 0.485000133514404,
+					"type": "Color"
+				},
+				"in_min": {
+					"a": 0.0,
+					"b": 0.0781252384185791,
+					"g": 0.0781252384185791,
+					"r": 0.0781252384185791,
+					"type": "Color"
+				},
+				"out_max": {
+					"a": 1.0,
+					"b": 0.571874976158142,
+					"g": 0.571874976158142,
+					"r": 0.571874976158142,
+					"type": "Color"
+				},
+				"out_min": {
+					"a": 0.0,
+					"b": 0.256249994039536,
+					"g": 0.256249994039536,
+					"r": 0.256249994039536,
+					"type": "Color"
+				}
+			},
+			"seed_int": 0,
+			"type": "tones"
+		},
+		{
+			"name": "uniform_greyscale",
+			"node_position": {
+				"x": -364.698486328125,
+				"y": -496.474792480469
+			},
+			"parameters": {
+				"color": 0.9
+			},
+			"seed_int": 0,
+			"type": "uniform_greyscale"
+		},
+		{
+			"name": "colorize",
+			"node_position": {
+				"x": -207.416717529297,
+				"y": -293.372131347656
+			},
+			"parameters": {
+				"gradient": {
+					"interpolation": 1,
+					"points": [
+						{
+							"a": 1.0,
+							"b": 0.560784339904785,
+							"g": 0.647058844566345,
+							"pos": 0.0,
+							"r": 0.69803923368454
+						},
+						{
+							"a": 1.0,
+							"b": 0.219607844948769,
+							"g": 0.274509817361832,
+							"pos": 0.287710641176646,
+							"r": 0.454901963472366
+						},
+						{
+							"a": 1.0,
+							"b": 0.286274522542953,
+							"g": 0.368627458810806,
+							"pos": 0.717099954153745,
+							"r": 0.588235318660736
+						},
+						{
+							"a": 1.0,
+							"b": 0.388235300779343,
+							"g": 0.47843137383461,
+							"pos": 1.0,
+							"r": 0.694117665290833
+						}
+					],
+					"type": "Gradient"
+				}
+			},
+			"seed_int": 0,
+			"type": "colorize"
+		},
+		{
+			"name": "bricks",
+			"node_position": {
+				"x": -626.692138671875,
+				"y": -586.749267578125
+			},
+			"parameters": {
+				"bevel": 0.1,
+				"columns": 12.0,
+				"corner": 0.3,
+				"mortar": 0.1,
+				"pattern": 0.0,
+				"repeat": 1.0,
+				"round": 0.0,
+				"row_offset": 0.5,
+				"rows": 18.0
+			},
+			"seed_int": 0,
+			"type": "bricks3"
+		},
+		{
+			"name": "tones_2",
+			"node_position": {
+				"x": -396.156372070313,
+				"y": -711.533935546875
+			},
+			"parameters": {
+				"in_max": {
+					"a": 1.0,
+					"b": 0.248750120401382,
+					"g": 0.248750120401382,
+					"r": 0.248750120401382,
+					"type": "Color"
+				},
+				"in_mid": {
+					"a": 0.5,
+					"b": 0.797500133514404,
+					"g": 0.797500133514404,
+					"r": 0.797500133514404,
+					"type": "Color"
+				},
+				"in_min": {
+					"a": 0.0,
+					"b": 0.0781252384185791,
+					"g": 0.0781252384185791,
+					"r": 0.0781252384185791,
+					"type": "Color"
+				},
+				"out_max": {
+					"a": 1.0,
+					"b": 0.365624994039536,
+					"g": 0.365624994039536,
+					"r": 0.365624994039536,
+					"type": "Color"
+				},
+				"out_min": {
+					"a": 0.0,
+					"b": 0.137500002980232,
+					"g": 0.137500002980232,
+					"r": 0.137500002980232,
+					"type": "Color"
+				}
+			},
+			"seed_int": 0,
+			"type": "tones"
+		}
+	],
+	"parameters": {},
+	"project_thumbnail": "UklGRgIFAABXRUJQVlA4WAoAAAAQAAAALwAALwAAQUxQSJQCAAANoCNteyJJevXrV9HAMpNX7Q9UrMd4gGEea5ksZmYGi3n3AG12ZIzVFT0X4BmrrOXdqqiUUlooyNIJImICmFOsBzh//bn89tcvAK6K1C9SVmbLdb1uM1Y0ZXysX6yVaIx1aRmvObyDqe3OZd3edRt/+PQkGmqR5K945gZIFWIwJFLELu3cv/LMWWPifFry8D0QxFomGoxAjK2Dj374ZtIwjxtd9BN4dcwrksL6lzZvGzg/mxtu+gavDeo0msLNn+xZdX4WN7z2PXyHuo36S5fvP+L8NB1teo/QZoEuNIv7VzVMkvKibwgtFqqhubxnIHFC4id8mwWrv/STbYn/q38Y32Hhzt+8+U0NIOUV96BkqLz04VmJSHwa38jB+PWPPCtRymtuQMlSObhyUmx1GN/Iw/jOvk+tNzuwZGrZ+UPJFlI2kpY2rnEdVTZU9rqCHln3+nSRfITusfObmHwMl43XR7LuyLkVJh9Du0n2vzXbyWSTzGj8l3TIeRh/GV+WTDbJDOBYN0o2UY5Bv0fOfSius/lYCljbuBQlk2iP/YErf9hZ2Uwq+z2u4tN9nWSySA3/FVXUkysHg2YR9HO0JPLsI+uTySA1xq8QIerZD18KmkHQx9ASCObNzTd7tzDfKY4az/9N2vbJpUEXFNo/34lJE6IO9iw3gy4ktKo70JLJwa3eXzS9W4BvV9fhRkz37sj9y5d6NTWl0Pn5DtyQWb1b3fPJzXg1NaTQ0OJO3JDZvQ62bX5pPUFkjhidjh87io6YN0h688NHD7ZIFWIwJFLEWgmfv4wxJfNH9OwzK/t3LlkmGozAse+/BPWJWoPIyU9/2Hhdr3tZp81oODjWL/4AjSV1xyi2XCv6x8bSZBz5v6tKZgdWUDggSAIAANAOAJ0BKjAAMAA+kTqXR6WjIiEuOAzIsBIJQBcNOBsCtMfcbaLnxtNJ3cCfK2UWZYMiZVPNB8mf01vx/129h0qVJ7iNWCdAYPq6khaK8QZf/GICYkW1ki1DPR1jAo1+zT4DvQPH1I49o6WeuOqsZ/xfugUiOq9JReYRZ8HVR9oA/v3bATZjggmi/dKq1dmnwBUurDCcIgsL22ZaGTRj3zlSBKP/gu8jVLpZM1NAp5xfBtEIu0aWLwgpiUkkbc1vCIIebrvdTHL9E0B3PECsScOouE0lvqj8ROeJc/iETRVwgv01Eg4uPVkP15zqx8k2cuc8D0jfLOnRGZqP+MFKGfjySTONhIFxrrN8XzcbABQFyx3vzElea8z/1tW26ysYKtH5aBWs2RJ4mu/8AaOttRoeF7kjVv/7B0xOzb6x3ADkY6FtO/F7apSXFBO8wqsWrDOoanunh3yaRHOeeY6zIjn4U+/DQOwAx2/NNBxMfOrfwEbPIDQFAPhpfs//7OZ8LIhtIM2uS7gRVmS/Qv0L5yJeUPyd5vFRil1fmJzUJ/+oazBojlVBZFYrDUBN75gZkEuqUiCkhfIjhb12yz7RgXg080sPfKuz97uy39EipH/YmgZNhfHoTEUt3fGBKfaWlGdNZjmAjGKYuu4PVeBZUMS+hSUQs5DpCg4e4wqxto+MbMBaPm2rfsPRjaXMNok2AfdknJdaH4nAuN+03ke5mP6qlfAlmret9986lXDXKms+wmINcB2drUWhVqqxyn2m8dvbRHDSuAAA",
+	"seed_int": 0,
+	"shortdesc": "",
+	"type": "graph"
+}
