@@ -14,6 +14,10 @@ public class PrototypePlayerController : MonoBehaviour
     private PlayerInput playerInput;
     private InputAction moveAction;
     private float verticalVelocity;
+    private Vector3 movementForward;
+    private Vector3 movementRight;
+    private bool hasMovementReference;
+    private bool isTurningInPlace;
 
     private void Awake()
     {
@@ -39,23 +43,51 @@ public class PrototypePlayerController : MonoBehaviour
 
         Vector3 moveDirection = Vector3.zero;
 
-        if (movementCamera != null)
+        if (moveInput != Vector2.zero)
         {
-            Vector3 cameraForward = Vector3.ProjectOnPlane(movementCamera.forward, Vector3.up).normalized;
-            Vector3 cameraRight = Vector3.ProjectOnPlane(movementCamera.right, Vector3.up).normalized;
+            if (!hasMovementReference && movementCamera != null)
+            {
+                movementForward = Vector3.ProjectOnPlane(movementCamera.forward, Vector3.up).normalized;
+                movementRight = Vector3.Cross(Vector3.up, movementForward).normalized;
+                hasMovementReference = movementForward.sqrMagnitude > 0.0001f;
+            }
 
-            moveDirection = Vector3.ClampMagnitude(
-                cameraForward * moveInput.y + cameraRight * moveInput.x,
-                1f);
+            if (hasMovementReference)
+            {
+                moveDirection = Vector3.ClampMagnitude(
+                    movementForward * moveInput.y + movementRight * moveInput.x,
+                    1f);
+            }
+        }
+        else
+        {
+            hasMovementReference = false;
+            isTurningInPlace = false;
         }
 
         if (moveDirection.sqrMagnitude > 0.0001f)
         {
+            Vector3 facingDirection = Vector3.ProjectOnPlane(transform.forward, Vector3.up).normalized;
+            if (Vector3.Angle(facingDirection, moveDirection) >= 70f)
+            {
+                isTurningInPlace = true;
+            }
+
             Quaternion targetRotation = Quaternion.LookRotation(moveDirection, Vector3.up);
             transform.rotation = Quaternion.Slerp(
                 transform.rotation,
                 targetRotation,
                 rotationSpeed * Time.deltaTime);
+
+            facingDirection = Vector3.ProjectOnPlane(transform.forward, Vector3.up).normalized;
+            if (Vector3.Angle(facingDirection, moveDirection) <= 30f)
+            {
+                isTurningInPlace = false;
+            }
+
+            moveDirection = isTurningInPlace
+                ? Vector3.zero
+                : facingDirection * moveDirection.magnitude;
         }
 
         if (characterController.isGrounded && verticalVelocity < 0f)
